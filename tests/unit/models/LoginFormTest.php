@@ -5,48 +5,44 @@ namespace tests\models;
 use app\models\LoginForm;
 use Codeception\Specify;
 
-class LoginFormTest extends \Codeception\Test\Unit
-{
-    private $model;
+class LoginFormTest extends \Codeception\Test\Unit {
 
-    protected function _after()
-    {
-        \Yii::$app->user->logout();
-    }
+	private $model;
 
-    public function testLoginNoUser()
-    {
-        $this->model = new LoginForm([
-            'username' => 'not_existing_username',
-            'password' => 'not_existing_password',
-        ]);
+	protected function _after() {
+		\Yii::$app->user->logout();
+	}
 
-        expect_not($this->model->login());
-        expect_that(\Yii::$app->user->isGuest);
-    }
+	public function testLoginNoUser() {
+		$this->model = new LoginForm([
+			'username' => 'not_existing_username',
+			'password' => 'not_existing_password',
+		]);
 
-    public function testLoginWrongPassword()
-    {
-        $this->model = new LoginForm([
-            'username' => 'demo',
-            'password' => 'wrong_password',
-        ]);
+		expect_not($this->model->login());
+		expect_that(\Yii::$app->user->isGuest);
+	}
 
-        expect_not($this->model->login());
-        expect_that(\Yii::$app->user->isGuest);
-        expect($this->model->errors)->hasKey('password');
-    }
+	public function testLoginWrongPassword() {
+		$this->model = new LoginForm([
+			'username' => 'demo',
+			'password' => 'wrong_password',
+		]);
 
-    public function testLoginCorrect()
-    {
-        $this->model = new LoginForm([
-            'username' => 'demo',
-            'password' => 'demo',
-        ]);
+		expect_not($this->model->login());
+		expect_that(\Yii::$app->user->isGuest);
+		expect($this->model->errors)->hasKey('password');
+	}
 
-        expect_that($this->model->login());
-        expect_not(\Yii::$app->user->isGuest);
-        expect($this->model->errors)->hasntKey('password');
-    }
+	public function testLoginCorrect() {
+		$this->model = new LoginForm([
+			'username' => 'demo',
+			'password' => 'demo',
+		]);
+
+		expect_that($this->model->login());
+		expect_not(\Yii::$app->user->isGuest);
+		expect($this->model->errors)->hasntKey('password');
+	}
 
 }
