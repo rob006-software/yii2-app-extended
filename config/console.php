@@ -3,6 +3,9 @@
 $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db-local.php');
 
+Yii::setAlias('@webroot', __DIR__ . '/../webroot');
+Yii::setAlias('@web', '/');
+
 $config = [
     'id' => 'app-console',
     'basePath' => dirname(__DIR__),
