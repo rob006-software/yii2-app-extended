@@ -1,0 +1,61 @@
+{
+    "name": "rob006/yii2-app-extended",
+    "description": "Yii 2 Extended Project Template",
+    "keywords": ["yii2", "framework", "extended", "project template"],
+    "homepage": "http://www.yiiframework.com/",
+    "type": "project",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/rob006/yii2-app-extended/issues",
+        "source": "https://github.com/rob006/yii2-app-extended"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0.5",
+        "yiisoft/yii2-bootstrap": "2.0.*",
+        "yiisoft/yii2-swiftmailer": "2.0.*"
+    },
+    "require-dev": {
+        "codeception/base": "^2.2.3",
+        "codeception/verify": "~0.3.1",
+        "yiisoft/yii2-debug": "2.0.*",
+        "yiisoft/yii2-gii": "2.0.*",
+        "yiisoft/yii2-faker": "2.0.*",
+        "codeception/specify": "~0.4.3"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+         "post-install-cmd": [
+            "php -r \"if(!file_exists('config/console-local.php')){copy('config/templates/console-local.php', 'config/console-local.php');}\"",
+            "php -r \"if(!file_exists('config/web-local.php')){copy('config/templates/web-local.php', 'config/web-local.php');}\"",
+            "php -r \"if(!file_exists('config/db-local.php')){copy('config/templates/db-local.php', 'config/db-local.php');}\"",
+            "php -r \"if(!file_exists('config/testdb-local.php')){copy('config/templates/testdb-local.php', 'config/testdb-local.php');}\"",
+            "php -r \"if(!file_exists('config/test-local.php')){copy('config/templates/test-local.php', 'config/test-local.php');}\"",
+            "yii\\composer\\Installer::postCreateProject"
+        ],
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "config/web-local.php"
+            ]
+        },
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}

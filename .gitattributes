@@ -1,0 +1,4 @@
+# Ignore all test and documentation for archive
+/.gitattributes     export-ignore
+/.travis.yml        export-ignore
+/LICENSE.md         export-ignore
