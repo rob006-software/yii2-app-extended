@@ -1,12 +1,13 @@
 Yii 2 Extended Project Template
-============================
+===============================
 
-Yii 2 Extended Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-rapidly creating small projects.
+Yii 2 Extended Project Template is a skeleton for [Yii 2](http://www.yiiframework.com/) application
+best for creating small and medium size projects.
 
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
+The template is based on [Official Yii 2 Basic Project Template](https://github.com/yiisoft/yii2-app-basic)
+and contains the basic features including user login/logout and a contact page.
+In addtition to `yii2-app-basic` it handles environment-specific config files and simplify adding
+custom file headers or `@author` phpdoc.
 
 DIRECTORY STRUCTURE
 -------------------
@@ -21,7 +22,8 @@ DIRECTORY STRUCTURE
       tests/              contains various tests for the application
       vendor/             contains dependent 3rd-party packages
       views/              contains view files for the Web application
-      web/                contains the entry script and Web resources
+      widgets/            contains widgets classes
+      webroot/            contains the entry script and Web resources
 
 
 
@@ -34,30 +36,10 @@ The minimum requirement by this project template that your Web server supports P
 INSTALLATION
 ------------
 
-### Install from an Archive File
-
-Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
-a directory named `app` that is directly under the Web root.
-
-Set cookie validation key in `config/web-local.php` file to some random secret string:
-
-```php
-'request' => [
-    // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-    'cookieValidationKey' => '<secret random string goes here>',
-],
-```
-
-You can then access the application through the following URL:
-
-~~~
-http://localhost/app/web/
-~~~
-
-
 ### Install via Composer
 
-If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
+The preferred way to install this template is through [Composer](http://getcomposer.org/).
+If you do not have it, you may install it by following the instructions
 at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
 You can then install this project template using the following command:
@@ -71,12 +53,55 @@ Now you should be able to access the application through the following URL, assu
 directly under the Web root.
 
 ~~~
-http://localhost/app/web/
+http://localhost/app/webroot/
 ~~~
+
+### Postinstallation setup
+
+After installation you should perform some steps to customize the project to your needs:
+
+1. Replace `/* {licenseheader} */` phrase from all php files in your project with your custom file
+   header. You could also remove it, if you don't want file headers in you project.
+
+2. Replace `{author}` phrase from all php files in your project with your name and email (for example
+   `John Doe <john@example.com>`) - this will set `@author` tag in phpdoc of all existing classes in project.
+
+3. Adjust `composer.json` file with your project settings.
+
+4. Add `LICENSE.md` file with your project license to the root of the project.
 
 
 CONFIGURATION
 -------------
+
+### Environment-specific config files
+
+By default template handles configuration specific for specified environment. For example `config/web-prod.php`
+constains configuration overrides for web app in production environment. This allows you to avoid
+configuration duplication by creating more general configuration an override it for specified environment.
+For example, for web application in `prod` environment app reads configuration in the following order:
+
+1. `config/main.php`.
+2. `config/main-prod.php`.
+3. `config/web.php`.
+4. `config/web-prod.php`.
+5. `config/web-local.php`.
+
+
+By default 3 types of environments are handled:
+
+1. `dev` - used by developer on app development. By default it contains some tools usefull during
+   development, like Debug toolbar or Gii.
+
+2. `stage` - environment for final test before deployment to production.
+
+3. `prod` - production environment.
+
+More about environments you can find on [Wiki](https://en.wikipedia.org/wiki/Deployment_environment).
+
+You can switch environment by editing `yii` and `webroot/index.php` files and changing
+`defined('YII_ENV') or define('YII_ENV', 'dev');` line with proper environment.
+
 
 ### Local config files
 
