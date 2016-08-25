@@ -1,9 +1,15 @@
 <?php
 
+/* {licenseheader} */
+
 namespace tests\models;
 
 use app\models\ContactForm;
 
+/**
+ *
+ * @author {author}
+ */
 class ContactFormTest extends \Codeception\Test\Unit {
 
 	private $model;

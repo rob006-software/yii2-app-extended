@@ -1,7 +1,12 @@
 <?php
 
+/* {licenseheader} */
+
 $params = require(__DIR__ . '/params.php');
 
+/**
+ * Configuration for web application.
+ */
 $config = [
 	'id' => 'app-web',
 	'basePath' => dirname(__DIR__),

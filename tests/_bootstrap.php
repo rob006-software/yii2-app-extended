@@ -1,5 +1,7 @@
 <?php
 
+/* {licenseheader} */
+
 define('YII_ENV', 'test');
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 

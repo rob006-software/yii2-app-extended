@@ -1,10 +1,16 @@
 <?php
 
+/* {licenseheader} */
+
 namespace tests\models;
 
 use app\models\LoginForm;
 use Codeception\Specify;
 
+/**
+ *
+ * @author {author}
+ */
 class LoginFormTest extends \Codeception\Test\Unit {
 
 	private $model;

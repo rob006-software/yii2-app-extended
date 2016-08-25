@@ -1,5 +1,7 @@
 <?php
 
+/* {licenseheader} */
+
 /**
  * Inherited Methods
  * @method void wantToTest($text)
@@ -14,6 +16,8 @@
  * @method \Codeception\Lib\Friend haveFriend($name, $actorClass = NULL)
  *
  * @SuppressWarnings(PHPMD)
+ *
+ * @author {author}
  */
 class AcceptanceTester extends \Codeception\Actor {
 

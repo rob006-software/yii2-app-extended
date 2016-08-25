@@ -1,5 +1,7 @@
 <?php
 
+/* {licenseheader} */
+
 /*
  * Application requirement checker script.
  *

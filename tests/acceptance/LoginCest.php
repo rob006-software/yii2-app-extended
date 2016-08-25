@@ -1,7 +1,13 @@
 <?php
 
+/* {licenseheader} */
+
 use yii\helpers\Url as Url;
 
+/**
+ *
+ * @author {author}
+ */
 class LoginCest {
 
 	public function ensureThatLoginWorks(AcceptanceTester $I) {

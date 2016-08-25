@@ -1,10 +1,12 @@
 <?php
 
+/* {licenseheader} */
+
 $params = require(__DIR__ . '/params.php');
 $dbParams = require(__DIR__ . '/testdb-local.php');
 
 /**
- * Application configuration shared by all test types
+ * Application configuration shared by all test types.
  */
 $config = [
 	'id' => 'app-tests',

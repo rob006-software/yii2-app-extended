@@ -1,5 +1,7 @@
 <?php
 
+/* {licenseheader} */
+
 /**
  * Inherited Methods
  * @method void wantToTest($text)
@@ -14,8 +16,12 @@
  * @method \Codeception\Lib\Friend haveFriend($name, $actorClass = NULL)
  *
  * @SuppressWarnings(PHPMD)
+ *
+ * @author {author}
  */
 class FunctionalTester extends \Codeception\Actor {
 
 	use _generated\FunctionalTesterActions;
+
+	// Define custom actions here
 }

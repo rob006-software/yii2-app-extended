@@ -1,9 +1,15 @@
 <?php
 
+/* {licenseheader} */
+
 namespace tests\models;
 
 use app\models\User;
 
+/**
+ *
+ * @author {author}
+ */
 class UserTest extends \Codeception\Test\Unit {
 
 	public function testFindUserById() {

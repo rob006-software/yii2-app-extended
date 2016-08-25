@@ -1,7 +1,13 @@
 <?php
 
+/* {licenseheader} */
+
 use yii\helpers\Url as Url;
 
+/**
+ *
+ * @author {author}
+ */
 class HomeCest {
 
 	public function ensureThatHomePageWorks(AcceptanceTester $I) {

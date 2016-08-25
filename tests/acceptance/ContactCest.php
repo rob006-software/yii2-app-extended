@@ -1,7 +1,13 @@
 <?php
 
+/* {licenseheader} */
+
 use yii\helpers\Url as Url;
 
+/**
+ *
+ * @author {author}
+ */
 class ContactCest {
 
 	public function _before(\AcceptanceTester $I) {

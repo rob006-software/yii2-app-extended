@@ -1,5 +1,11 @@
 <?php
 
+/* {licenseheader} */
+
+/**
+ *
+ * @author {author}
+ */
 class LoginFormCest {
 
 	public function _before(\FunctionalTester $I) {

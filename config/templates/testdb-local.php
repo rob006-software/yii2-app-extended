@@ -1,5 +1,7 @@
 <?php
 
+/* {licenseheader} */
+
 /**
  * Database connection credentials for tests on a local installation.
  */

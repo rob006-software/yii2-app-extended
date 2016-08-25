@@ -1,11 +1,16 @@
 <?php
 
+/* {licenseheader} */
+
 $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db-local.php');
 
 Yii::setAlias('@webroot', __DIR__ . '/../webroot');
 Yii::setAlias('@web', '/');
 
+/**
+ * Configuration for console application.
+ */
 $config = [
 	'id' => 'app-console',
 	'basePath' => dirname(__DIR__),

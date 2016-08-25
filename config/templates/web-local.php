@@ -1,5 +1,7 @@
 <?php
 
+/* {licenseheader} */
+
 /**
  * Configuration adjustments for local installation of web application.
  */

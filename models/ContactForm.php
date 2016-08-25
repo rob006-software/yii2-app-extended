@@ -1,5 +1,7 @@
 <?php
 
+/* {licenseheader} */
+
 namespace app\models;
 
 use Yii;
@@ -7,6 +9,8 @@ use yii\base\Model;
 
 /**
  * ContactForm is the model behind the contact form.
+ *
+ * @author {author}
  */
 class ContactForm extends Model {
 
@@ -17,7 +21,7 @@ class ContactForm extends Model {
 	public $verifyCode;
 
 	/**
-	 * @return array the validation rules.
+	 * {@inheritdoc}
 	 */
 	public function rules() {
 		return [
@@ -31,7 +35,7 @@ class ContactForm extends Model {
 	}
 
 	/**
-	 * @return array customized attribute labels
+	 * {@inheritdoc}
 	 */
 	public function attributeLabels() {
 		return [
@@ -41,8 +45,8 @@ class ContactForm extends Model {
 
 	/**
 	 * Sends an email to the specified email address using the information collected by this model.
-	 * @param string $email the target email address
-	 * @return boolean whether the model passes validation
+	 * @param string $email The target email address.
+	 * @return boolean Whether the model passes validation.
 	 */
 	public function contact($email) {
 		if ($this->validate()) {
