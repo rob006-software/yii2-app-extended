@@ -44,10 +44,10 @@ at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
 You can then install this project template using the following command:
 
-~~~
+```shell
 php composer.phar global require "fxp/composer-asset-plugin:~1.2.0"
 php composer.phar create-project --prefer-dist --stability=dev rob006/yii2-app-extended app
-~~~
+```
 
 Now you should be able to access the application through the following URL, assuming `app` is the directory
 directly under the Web root.
@@ -61,10 +61,11 @@ http://localhost/app/webroot/
 After installation you should perform some steps to customize the project to your needs:
 
 1. Replace `/* {licenseheader} */` phrase from all php files in your project with your custom file
-   header. You could also remove it, if you don't want file headers in you project.
+   header. You could also remove it if you don't want file headers in your project.
 
 2. Replace `{author}` phrase from all php files in your project with your name and email (for example
-   `John Doe <john@example.com>`) - this will set `@author` tag in phpdoc of all existing classes in project.
+   `John Doe <john@example.com>`) - this will set `@author` tag in phpdoc of all existing classes in
+   the project.
 
 3. Adjust `composer.json` file with your project settings.
 
@@ -90,11 +91,9 @@ For example, for web application in `prod` environment app reads configuration i
 
 By default 3 types of environments are handled:
 
-1. `dev` - used by developer on app development. By default it contains some tools usefull during
+1. `dev` - used by developer on app development. By default it contains some tools useful during
    development, like Debug toolbar or Gii.
-
 2. `stage` - environment for final test before deployment to production.
-
 3. `prod` - production environment.
 
 More about environments you can find on [Wiki](https://en.wikipedia.org/wiki/Deployment_environment).
@@ -151,7 +150,7 @@ By default there are 3 test suites:
 
 Tests can be executed by running
 
-```
+```shell
 composer exec codecept run
 ```
 
@@ -171,19 +170,19 @@ To execute acceptance tests do the following:
 
 3. Update dependencies with Composer
 
-    ```
+    ```shell
     composer update
     ```
 
 4. Download [Selenium Server](http://www.seleniumhq.org/download/) and launch it:
 
-    ```
+    ```shell
     java -jar ~/selenium-server-standalone-x.xx.x.jar
     ```
 
 5. (Optional) Create `yii2_app_tests` database and update it by applying migrations if you have them.
 
-   ```
+   ```shell
    tests/bin/yii migrate
    ```
 
@@ -192,13 +191,13 @@ To execute acceptance tests do the following:
 
 6. Start web server:
 
-    ```
+    ```shell
     tests/bin/yii serve
     ```
 
 7. Now you can run all available tests
 
-   ```
+   ```shell
    # run all available tests
    composer exec codecept run
 
@@ -214,14 +213,14 @@ To execute acceptance tests do the following:
 By default, code coverage is disabled in `codeception.yml` configuration file, you should uncomment needed rows to be able
 to collect code coverage. You can run your tests and collect coverage with the following command:
 
-```
-#collect coverage for all tests
+```shell
+# collect coverage for all tests
 composer exec codecept run -- --coverage-html --coverage-xml
 
-#collect coverage only for unit tests
+# collect coverage only for unit tests
 composer exec codecept run unit -- --coverage-html --coverage-xml
 
-#collect coverage for unit and functional tests
+# collect coverage for unit and functional tests
 composer exec codecept run functional,unit -- --coverage-html --coverage-xml
 ```
 
