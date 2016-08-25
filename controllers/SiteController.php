@@ -19,7 +19,7 @@ use yii\web\Controller;
 class SiteController extends Controller {
 
 	/**
-	 * @inheritdoc
+	 * {@inheritdoc}
 	 */
 	public function behaviors() {
 		return [
@@ -44,7 +44,7 @@ class SiteController extends Controller {
 	}
 
 	/**
-	 * @inheritdoc
+	 * {@inheritdoc}
 	 */
 	public function actions() {
 		return [

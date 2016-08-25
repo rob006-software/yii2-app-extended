@@ -34,14 +34,14 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface {
 	];
 
 	/**
-	 * @inheritdoc
+	 * {@inheritdoc}
 	 */
 	public static function findIdentity($id) {
 		return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
 	}
 
 	/**
-	 * @inheritdoc
+	 * {@inheritdoc}
 	 */
 	public static function findIdentityByAccessToken($token, $type = null) {
 		foreach (self::$users as $user) {
@@ -70,21 +70,21 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface {
 	}
 
 	/**
-	 * @inheritdoc
+	 * {@inheritdoc}
 	 */
 	public function getId() {
 		return $this->id;
 	}
 
 	/**
-	 * @inheritdoc
+	 * {@inheritdoc}
 	 */
 	public function getAuthKey() {
 		return $this->authKey;
 	}
 
 	/**
-	 * @inheritdoc
+	 * {@inheritdoc}
 	 */
 	public function validateAuthKey($authKey) {
 		return $this->authKey === $authKey;
