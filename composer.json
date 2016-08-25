@@ -37,6 +37,11 @@
 			"yii\\composer\\Installer::postCreateProject"
 		],
 		"post-create-project-cmd": [
+			"php -r \"if(!file_exists('config/console-local.php')){copy('config/templates/console-local.php', 'config/console-local.php');}\"",
+			"php -r \"if(!file_exists('config/web-local.php')){copy('config/templates/web-local.php', 'config/web-local.php');}\"",
+			"php -r \"if(!file_exists('config/db-local.php')){copy('config/templates/db-local.php', 'config/db-local.php');}\"",
+			"php -r \"if(!file_exists('config/testdb-local.php')){copy('config/templates/testdb-local.php', 'config/testdb-local.php');}\"",
+			"php -r \"if(!file_exists('config/test-local.php')){copy('config/templates/test-local.php', 'config/test-local.php');}\"",
 			"yii\\composer\\Installer::postCreateProject"
 		]
 	},
@@ -45,7 +50,7 @@
 			"setPermission": [
 				{
 					"runtime": "0777",
-					"web/assets": "0777",
+					"webroot/assets": "0777",
 					"yii": "0755"
 				}
 			],
