@@ -2,7 +2,7 @@
 
 /* {licenseheader} */
 
-use yii\helpers\Url as Url;
+use yii\helpers\Url;
 
 /**
  *
