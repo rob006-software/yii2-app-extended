@@ -10,6 +10,10 @@ return [
 	'bootstrap' => [
 		'log',
 	],
+	'aliases' => [
+		'@bower' => '@vendor/bower-asset',
+		'@npm' => '@vendor/npm-asset',
+	],
 	'components' => [
 		'cache' => [
 			'class' => 'yii\caching\FileCache',
@@ -35,6 +39,9 @@ return [
 			'showScriptName' => false,
 			'rules' => [
 			],
+		],
+		'assetManager' => [
+			'linkAssets' => true,
 		],
 	],
 	'params' => require(__DIR__ . '/params.php'),
