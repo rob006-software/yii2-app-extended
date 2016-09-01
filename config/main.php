@@ -2,6 +2,8 @@
 
 /* {licenseheader} */
 
+error_reporting(-1);
+
 /**
  * General configuration shared between console and web application.
  */
