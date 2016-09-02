@@ -35,7 +35,14 @@ return [
 				],
 			],
 		],
-		'db' => require(__DIR__ . '/db-local.php'),
+		'db' => \yii\helpers\ArrayHelper::merge(
+				[
+					'class' => 'yii\db\Connection',
+					'charset' => 'utf8',
+					'enableSchemaCache' => true,
+				],
+				require(__DIR__ . '/db-local.php')
+		),
 		'urlManager' => [
 			'enablePrettyUrl' => true,
 			'showScriptName' => false,
