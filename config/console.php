@@ -2,7 +2,7 @@
 
 /* {licenseheader} */
 
-Yii::setAlias('@webroot', __DIR__ . '/../webroot');
+Yii::setAlias('@webroot', dirname(__DIR__) . '/webroot');
 Yii::setAlias('@web', '/');
 
 /**
