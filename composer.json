@@ -72,6 +72,10 @@
 			"generateCookieValidationKey": [
 				"config/web-local.php"
 			]
-		}
+		},
+		"asset-vcs-driver-options": {
+			"github-no-api": true
+		},
+		"asset-pattern-skip-version": "(-build|-patch)"
 	}
 }
