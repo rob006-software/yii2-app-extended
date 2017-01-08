@@ -18,6 +18,9 @@ $config = [
 		'mailer' => [
 			'useFileTransport' => true,
 		],
+		'assetManager' => [
+			'basePath' => __DIR__ . '/../webroot/assets',
+		],
 		'urlManager' => [
 			'showScriptName' => true,
 		],
