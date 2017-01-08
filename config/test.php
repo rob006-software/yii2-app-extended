@@ -9,6 +9,10 @@ $config = [
 	'id' => 'app-tests',
 	'basePath' => dirname(__DIR__),
 	'language' => 'en-US',
+	'aliases' => [
+		'@bower' => '@vendor/bower-asset',
+		'@npm' => '@vendor/npm-asset',
+	],
 	'components' => [
 		'db' => require(__DIR__ . '/testdb-local.php'),
 		'mailer' => [
