@@ -31,11 +31,14 @@
 			"app\\": ""
 		},
 		"exclude-from-classmap": [
-			"/resources/"
+			"/test/"
 		]
 	},
 	"config": {
-		"process-timeout": 1800
+		"process-timeout": 1800,
+		"platform": {
+			"php": "5.6"
+		}
 	},
 	"scripts": {
 		"post-install-cmd": [
