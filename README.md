@@ -84,9 +84,10 @@ For example, for web application in `prod` environment app reads configuration i
 
 1. `config/main.php`.
 2. `config/main-prod.php`.
-3. `config/web.php`.
-4. `config/web-prod.php`.
-5. `config/web-local.php`.
+3. `config/main-local.php`.
+4. `config/web.php`.
+5. `config/web-prod.php`.
+6. `config/web-local.php`.
 
 
 By default 3 types of environments are handled:
