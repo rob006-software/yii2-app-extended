@@ -2,8 +2,6 @@
 
 /* {licenseheader} */
 
-namespace yii\base;
-
 /**
  * Fake class to define code completion for IDE.
  *
