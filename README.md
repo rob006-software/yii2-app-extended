@@ -18,6 +18,7 @@ DIRECTORY STRUCTURE
       controllers/        contains Web controller classes
       mail/               contains view files for e-mails
       models/             contains model classes
+      resources/          contains non-PHP resources
       runtime/            contains files generated during runtime
       tests/              contains various tests for the application
       vendor/             contains dependent 3rd-party packages

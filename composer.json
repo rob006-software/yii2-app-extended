@@ -31,7 +31,8 @@
 			"app\\": ""
 		},
 		"exclude-from-classmap": [
-			"/test/"
+			"/tests/",
+			"/resources/"
 		]
 	},
 	"repositories": [
