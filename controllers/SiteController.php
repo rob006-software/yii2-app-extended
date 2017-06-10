@@ -4,12 +4,13 @@
 
 namespace app\controllers;
 
-use Yii;
 use app\models\ContactForm;
 use app\models\LoginForm;
+use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
+use yii\web\Response;
 
 /**
  * Basic app controller.
@@ -60,6 +61,7 @@ class SiteController extends Controller {
 
 	/**
 	 * Displays homepage.
+	 *
 	 * @return string
 	 */
 	public function actionIndex() {
@@ -68,7 +70,8 @@ class SiteController extends Controller {
 
 	/**
 	 * Login action.
-	 * @return string
+	 *
+	 * @return string|Response
 	 */
 	public function actionLogin() {
 		if (!Yii::$app->user->isGuest) {
@@ -80,13 +83,14 @@ class SiteController extends Controller {
 			return $this->goBack();
 		}
 		return $this->render('login', [
-					'model' => $model,
+			'model' => $model,
 		]);
 	}
 
 	/**
 	 * Logout action.
-	 * @return string
+	 *
+	 * @return string|Response
 	 */
 	public function actionLogout() {
 		Yii::$app->user->logout();
@@ -96,7 +100,8 @@ class SiteController extends Controller {
 
 	/**
 	 * Displays contact page.
-	 * @return string
+	 *
+	 * @return string|Response
 	 */
 	public function actionContact() {
 		$model = new ContactForm();
@@ -106,12 +111,13 @@ class SiteController extends Controller {
 			return $this->refresh();
 		}
 		return $this->render('contact', [
-					'model' => $model,
+			'model' => $model,
 		]);
 	}
 
 	/**
 	 * Displays about page.
+	 *
 	 * @return string
 	 */
 	public function actionAbout() {

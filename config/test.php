@@ -14,7 +14,7 @@ $config = [
 		'@npm' => '@vendor/npm-asset',
 	],
 	'components' => [
-		'db' => require(__DIR__ . '/testdb-local.php'),
+		'db' => require __DIR__ . '/testdb-local.php',
 		'mailer' => [
 			'useFileTransport' => true,
 		],
@@ -38,7 +38,7 @@ $config = [
 			*/
 		],
 	],
-	'params' => require(__DIR__ . '/params.php'),
+	'params' => require __DIR__ . '/params.php',
 ];
 
-return yii\helpers\ArrayHelper::merge($config, require(__DIR__ . '/test-local.php'));
+return yii\helpers\ArrayHelper::merge($config, require __DIR__ . '/test-local.php');

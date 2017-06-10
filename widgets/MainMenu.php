@@ -37,6 +37,7 @@ class MainMenu extends Widget {
 
 	/**
 	 * Generate items list for menu.
+	 *
 	 * @return array
 	 */
 	protected function getItems() {
@@ -57,6 +58,7 @@ class MainMenu extends Widget {
 
 	/**
 	 * Generate logout button for menu.
+	 *
 	 * @return string
 	 */
 	protected function getLogoutButton() {

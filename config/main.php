@@ -41,7 +41,7 @@ return [
 				'charset' => 'utf8',
 				'enableSchemaCache' => true,
 			],
-			require(__DIR__ . '/db-local.php')
+			require __DIR__ . '/db-local.php'
 		),
 		'urlManager' => [
 			'enablePrettyUrl' => true,
@@ -53,5 +53,5 @@ return [
 			'linkAssets' => true,
 		],
 	],
-	'params' => require(__DIR__ . '/params.php'),
+	'params' => require __DIR__ . '/params.php',
 ];

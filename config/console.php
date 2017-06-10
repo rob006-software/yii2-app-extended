@@ -12,7 +12,8 @@ return [
 	'id' => 'app-console',
 	'controllerNamespace' => 'app\commands',
 	'controllerMap' => [
-		'fixture' => [ // Fixture generation command line.
+		// Fixture generation command line.
+		'fixture' => [
 			'class' => 'yii\faker\FixtureController',
 		],
 	],
