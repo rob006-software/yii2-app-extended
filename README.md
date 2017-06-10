@@ -45,7 +45,6 @@ at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 You can then install this project template using the following command:
 
 ```shell
-php composer.phar global require "fxp/composer-asset-plugin:~1.2.0"
 php composer.phar create-project --prefer-dist --stability=dev rob006/yii2-app-extended app
 ```
 
@@ -78,7 +77,7 @@ CONFIGURATION
 ### Environment-specific config files
 
 By default template handles configuration specific for specified environment. For example `config/web-prod.php`
-constains configuration overrides for web app in production environment. This allows you to avoid
+contains configuration overrides for web app in production environment. This allows you to avoid
 configuration duplication by creating more general configuration an override it for specified environment.
 For example, for web application in `prod` environment app reads configuration in the following order:
 
