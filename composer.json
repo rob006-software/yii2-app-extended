@@ -2,12 +2,12 @@
 	"name": "rob006/yii2-app-extended",
 	"description": "Yii 2 Extended Project Template",
 	"keywords": ["yii2", "framework", "extended", "project template"],
-	"homepage": "https://github.com/rob006/yii2-app-extended",
+	"homepage": "https://github.com/rob006-software/yii2-app-extended",
 	"type": "project",
 	"license": "MIT",
 	"support": {
-		"issues": "https://github.com/rob006/yii2-app-extended/issues",
-		"source": "https://github.com/rob006/yii2-app-extended"
+		"issues": "https://github.com/rob006-software/yii2-app-extended/issues",
+		"source": "https://github.com/rob006-software/yii2-app-extended"
 	},
 	"minimum-stability": "dev",
 	"prefer-stable": true,
