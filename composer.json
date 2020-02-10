@@ -13,15 +13,15 @@
 	"prefer-stable": true,
 	"require": {
 		"php": "^7.1",
-		"yiisoft/yii2": "~2.0.14",
-		"yiisoft/yii2-bootstrap": "~2.0.0",
-		"yiisoft/yii2-composer": "~2.0.5",
-		"yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0"
+		"yiisoft/yii2": "~2.0.32",
+		"yiisoft/yii2-bootstrap": "~2.0.10",
+		"yiisoft/yii2-composer": "~2.0.8",
+		"yiisoft/yii2-swiftmailer": "~2.1.2"
 	},
 	"require-dev": {
-		"yiisoft/yii2-debug": "~2.1.0",
-		"yiisoft/yii2-gii": "~2.1.0",
-		"yiisoft/yii2-faker": "~2.0.0",
+		"yiisoft/yii2-debug": "~2.1.13",
+		"yiisoft/yii2-gii": "~2.1.4",
+		"yiisoft/yii2-faker": "~2.0.4",
 		"codeception/codeception": "^4.0",
 		"codeception/verify": "~0.5.0 || ~1.1.0",
 		"codeception/specify": "~0.4.6",
