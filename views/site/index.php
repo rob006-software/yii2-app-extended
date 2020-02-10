@@ -2,7 +2,9 @@
 
 /* {licenseheader} */
 
-/* @var $this yii\web\View */
+use yii\web\View;
+
+/* @var $this View */
 
 $this->title = 'My Yii Application';
 ?>

@@ -69,5 +69,4 @@ class MainMenu extends Widget {
 
 		return $output;
 	}
-
 }

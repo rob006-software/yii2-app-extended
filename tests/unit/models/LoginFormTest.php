@@ -2,16 +2,17 @@
 
 /* {licenseheader} */
 
-namespace tests\models;
+namespace tests\unit\models;
 
 use app\models\LoginForm;
-use Codeception\Specify;
+use Codeception\Test\Unit as UnitTest;
 
 /**
+ * Class LoginFormTest.
  *
  * @author {author}
  */
-class LoginFormTest extends \Codeception\Test\Unit {
+class LoginFormTest extends UnitTest {
 
 	private $model;
 
@@ -50,5 +51,4 @@ class LoginFormTest extends \Codeception\Test\Unit {
 		expect_not(\Yii::$app->user->isGuest);
 		expect($this->model->errors)->hasntKey('password');
 	}
-
 }

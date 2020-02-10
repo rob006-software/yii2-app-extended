@@ -5,6 +5,7 @@
 use yii\helpers\Url;
 
 /**
+ * Class LoginCest.
  *
  * @author {author}
  */
@@ -23,5 +24,4 @@ class LoginCest {
 		$I->expectTo('see user info');
 		$I->see('Logout');
 	}
-
 }

@@ -2,7 +2,9 @@
 
 /* {licenseheader} */
 
-Yii::setAlias('@webroot', dirname(__DIR__) . '/webroot');
+use yii\faker\FixtureController;
+
+Yii::setAlias('@webroot', dirname(__DIR__) . '/public');
 Yii::setAlias('@web', '/');
 
 /**
@@ -14,7 +16,7 @@ return [
 	'controllerMap' => [
 		// Fixture generation command line.
 		'fixture' => [
-			'class' => 'yii\faker\FixtureController',
+			'class' => FixtureController::class,
 		],
 	],
 ];

@@ -2,6 +2,9 @@
 
 /* {licenseheader} */
 
+use app\models\User;
+use yii\helpers\ArrayHelper;
+
 /**
  * Application configuration shared by all test types.
  */
@@ -12,6 +15,7 @@ $config = [
 	'aliases' => [
 		'@bower' => '@vendor/bower-asset',
 		'@npm' => '@vendor/npm-asset',
+		'@tests' => '@app/tests',
 	],
 	'components' => [
 		'db' => require __DIR__ . '/testdb-local.php',
@@ -19,13 +23,13 @@ $config = [
 			'useFileTransport' => true,
 		],
 		'assetManager' => [
-			'basePath' => __DIR__ . '/../webroot/assets',
+			'basePath' => __DIR__ . '/../public/assets',
 		],
 		'urlManager' => [
 			'showScriptName' => true,
 		],
 		'user' => [
-			'identityClass' => 'app\models\User',
+			'identityClass' => User::class,
 		],
 		'request' => [
 			'cookieValidationKey' => 'test',
@@ -41,4 +45,4 @@ $config = [
 	'params' => require __DIR__ . '/params.php',
 ];
 
-return yii\helpers\ArrayHelper::merge($config, require __DIR__ . '/test-local.php');
+return ArrayHelper::merge($config, require __DIR__ . '/test-local.php');

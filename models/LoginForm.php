@@ -19,12 +19,10 @@ class LoginForm extends Model {
 	public $username;
 	public $password;
 	public $rememberMe = true;
+
 	private $_user = false;
 
-	/**
-	 * {@inheritdoc}
-	 */
-	public function rules() {
+	public function rules(): array {
 		return [
 			// username and password are both required
 			[['username', 'password'], 'required'],
@@ -54,9 +52,10 @@ class LoginForm extends Model {
 
 	/**
 	 * Logs in a user using the provided username and password.
-	 * @return boolean Whether the user is logged in successfully.
+	 *
+	 * @return bool Whether the user is logged in successfully.
 	 */
-	public function login() {
+	public function login(): bool {
 		if ($this->validate()) {
 			return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
 		}
@@ -65,14 +64,14 @@ class LoginForm extends Model {
 
 	/**
 	 * Finds user by [[username]].
+	 *
 	 * @return User|null
 	 */
-	public function getUser() {
+	public function getUser(): ?user {
 		if ($this->_user === false) {
 			$this->_user = User::findByUsername($this->username);
 		}
 
 		return $this->_user;
 	}
-
 }

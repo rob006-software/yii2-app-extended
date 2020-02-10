@@ -4,18 +4,22 @@
 
 namespace app\models;
 
+use yii\base\BaseObject;
+use yii\web\IdentityInterface;
+
 /**
  * User model.
  *
  * @author {author}
  */
-class User extends \yii\base\Object implements \yii\web\IdentityInterface {
+class User extends BaseObject implements IdentityInterface {
 
 	public $id;
 	public $username;
 	public $password;
 	public $authKey;
 	public $accessToken;
+
 	private static $users = [
 		'100' => [
 			'id' => '100',
@@ -33,16 +37,10 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface {
 		],
 	];
 
-	/**
-	 * {@inheritdoc}
-	 */
 	public static function findIdentity($id) {
 		return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
 	}
 
-	/**
-	 * {@inheritdoc}
-	 */
 	public static function findIdentityByAccessToken($token, $type = null) {
 		foreach (self::$users as $user) {
 			if ($user['accessToken'] === $token) {

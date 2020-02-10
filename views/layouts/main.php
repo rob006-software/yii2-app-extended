@@ -5,9 +5,10 @@
 use app\assets\AppAsset;
 use app\widgets\MainMenu;
 use yii\helpers\Html;
+use yii\web\View;
 use yii\widgets\Breadcrumbs;
 
-/* @var $this \yii\web\View */
+/* @var $this View */
 /* @var $content string */
 
 AppAsset::register($this);
@@ -29,11 +30,9 @@ AppAsset::register($this);
 			<?= MainMenu::widget() ?>
 
 			<div class="container">
-				<?=
-				Breadcrumbs::widget([
-					'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-				])
-				?>
+				<?= Breadcrumbs::widget([
+					'links' => $this->params['breadcrumbs'] ?? [],
+				]) ?>
 				<?= $content ?>
 			</div>
 		</div>
@@ -42,7 +41,11 @@ AppAsset::register($this);
 			<div class="container">
 				<p class="pull-left">&copy; My Company <?= date('Y') ?></p>
 
-				<p class="pull-right"><?= Yii::powered() ?></p>
+				<p class="pull-right"><?= Yii::t('yii', 'Powered by {yii}', [
+						'yii' => '<a href="http://www.yiiframework.com/" rel="external">'
+							. Yii::t('yii', 'Yii Framework')
+							. '</a>',
+					]) ?></p>
 			</div>
 		</footer>
 

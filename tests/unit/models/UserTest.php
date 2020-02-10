@@ -2,15 +2,17 @@
 
 /* {licenseheader} */
 
-namespace tests\models;
+namespace tests\unit\models;
 
 use app\models\User;
+use Codeception\Test\Unit as UnitTest;
 
 /**
+ * Class UserTest.
  *
  * @author {author}
  */
-class UserTest extends \Codeception\Test\Unit {
+class UserTest extends UnitTest {
 
 	public function testFindUserById() {
 		expect_that($user = User::findIdentity(100));
@@ -42,5 +44,4 @@ class UserTest extends \Codeception\Test\Unit {
 		expect_that($user->validatePassword('admin'));
 		expect_not($user->validatePassword('123456'));
 	}
-
 }
