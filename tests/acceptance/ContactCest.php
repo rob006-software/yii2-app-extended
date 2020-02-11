@@ -5,12 +5,13 @@
 use yii\helpers\Url;
 
 /**
+ * Class ContactCest.
  *
  * @author {author}
  */
 class ContactCest {
 
-	public function _before(\AcceptanceTester $I) {
+	public function _before(AcceptanceTester $I) {
 		$I->amOnPage(Url::toRoute('/site/contact'));
 	}
 
@@ -34,5 +35,4 @@ class ContactCest {
 		$I->dontSeeElement('#contact-form');
 		$I->see('Thank you for contacting us. We will respond to you as soon as possible.');
 	}
-
 }

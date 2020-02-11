@@ -1,0 +1,3 @@
+#nginx logs
+yii2app.access.log
+yii2app.error.log

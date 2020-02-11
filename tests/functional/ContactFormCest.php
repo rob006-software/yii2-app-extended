@@ -3,20 +3,21 @@
 /* {licenseheader} */
 
 /**
+ * Class ContactFormCest.
  *
  * @author {author}
  */
 class ContactFormCest {
 
-	public function _before(\FunctionalTester $I) {
+	public function _before(FunctionalTester $I) {
 		$I->amOnPage(['site/contact']);
 	}
 
-	public function openContactPage(\FunctionalTester $I) {
+	public function openContactPage(FunctionalTester $I) {
 		$I->see('Contact', 'h1');
 	}
 
-	public function submitEmptyForm(\FunctionalTester $I) {
+	public function submitEmptyForm(FunctionalTester $I) {
 		$I->submitForm('#contact-form', []);
 		$I->expectTo('see validations errors');
 		$I->see('Contact', 'h1');
@@ -27,7 +28,7 @@ class ContactFormCest {
 		$I->see('The verification code is incorrect');
 	}
 
-	public function submitFormWithIncorrectEmail(\FunctionalTester $I) {
+	public function submitFormWithIncorrectEmail(FunctionalTester $I) {
 		$I->submitForm('#contact-form', [
 			'ContactForm[name]' => 'tester',
 			'ContactForm[email]' => 'tester.email',
@@ -43,7 +44,7 @@ class ContactFormCest {
 		$I->dontSee('The verification code is incorrect', '.help-inline');
 	}
 
-	public function submitFormSuccessfully(\FunctionalTester $I) {
+	public function submitFormSuccessfully(FunctionalTester $I) {
 		$I->submitForm('#contact-form', [
 			'ContactForm[name]' => 'tester',
 			'ContactForm[email]' => 'tester@example.com',
@@ -55,5 +56,4 @@ class ContactFormCest {
 		$I->dontSeeElement('#contact-form');
 		$I->see('Thank you for contacting us. We will respond to you as soon as possible.');
 	}
-
 }

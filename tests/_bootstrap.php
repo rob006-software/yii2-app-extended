@@ -2,8 +2,14 @@
 
 /* {licenseheader} */
 
+// @todo change context to `test`?
+define('APP_CONTEXT', 'web');
+define('APP_ROOT', dirname(__DIR__));
+define('ENV', 'test');
 define('YII_ENV', 'test');
-defined('YII_DEBUG') or define('YII_DEBUG', true);
+define('YII_DEBUG', true);
 
-require_once(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
-require __DIR__ . '/../vendor/autoload.php';
+require_once APP_ROOT . '/vendor/yiisoft/yii2/Yii.php';
+require APP_ROOT . '/vendor/autoload.php';
+
+require APP_ROOT . '/config/bootstrap.php';
