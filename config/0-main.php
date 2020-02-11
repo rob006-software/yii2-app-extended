@@ -2,13 +2,17 @@
 
 /* {licenseheader} */
 
-error_reporting(-1);
+use yii\db\Connection as DbConnection;
+use yii\helpers\ArrayHelper;
+use yii\log\FileTarget;
+use yii\swiftmailer\Mailer as SwiftMailer;
+use yii\caching\FileCache;
 
 /**
  * General configuration shared between console and web application.
  */
 return [
-	'basePath' => dirname(__DIR__),
+	'basePath' => APP_ROOT,
 	'bootstrap' => [
 		'log',
 	],
@@ -18,10 +22,10 @@ return [
 	],
 	'components' => [
 		'cache' => [
-			'class' => 'yii\caching\FileCache',
+			'class' => FileCache::class,
 		],
 		'mailer' => [
-			'class' => 'yii\swiftmailer\Mailer',
+			'class' => SwiftMailer::class,
 			// send all mails to a file by default. You have to set
 			// 'useFileTransport' to false and configure a transport
 			// for the mailer to send real emails.
@@ -30,14 +34,14 @@ return [
 		'log' => [
 			'targets' => [
 				[
-					'class' => 'yii\log\FileTarget',
+					'class' => FileTarget::class,
 					'levels' => ['error', 'warning'],
 				],
 			],
 		],
-		'db' => \yii\helpers\ArrayHelper::merge(
+		'db' => ArrayHelper::merge(
 			[
-				'class' => 'yii\db\Connection',
+				'class' => DbConnection::class,
 				'charset' => 'utf8',
 				'enableSchemaCache' => true,
 			],
@@ -53,5 +57,9 @@ return [
 			'linkAssets' => true,
 		],
 	],
-	'params' => require __DIR__ . '/params.php',
+	'params' => [
+		'adminEmail' => 'admin@example.com',
+		'senderEmail' => 'noreply@example.com',
+		'senderName' => 'Example.com mailer',
+	],
 ];

@@ -3,23 +3,24 @@
 
 /* {licenseheader} */
 
-defined('YII_DEBUG') or define('YII_DEBUG', true);
-defined('YII_ENV') or define('YII_ENV', 'test');
+use yii\console\Application;
+use yii\helpers\ArrayHelper;
 
-require __DIR__ . '/../../vendor/autoload.php';
-require __DIR__ . '/../../vendor/yiisoft/yii2/Yii.php';
+const APP_CONTEXT = 'console';
+define('APP_ROOT', dirname(__DIR__, 2));
+define('ENV', 'test');
+define('YII_ENV', 'test');
+define('YII_DEBUG', true);
 
-$config = yii\helpers\ArrayHelper::merge(
-		require __DIR__ . '/../../config/main.php',
-		require __DIR__ . '/../../config/console.php',
-		require __DIR__ . '/../../config/console-local.php',
-		[
-			'components' => [
-				'db' => require __DIR__ . '/../../config/testdb-local.php',
-			],
-		]
+require APP_ROOT . '/vendor/yiisoft/yii2/Yii.php';
+require APP_ROOT . '/vendor/autoload.php';
+
+require APP_ROOT . '/config/bootstrap.php';
+/* @noinspection PhpIncludeInspection */
+$config = ArrayHelper::merge(
+	require APP_ROOT . '/tests/config/0-main.php',
+	require APP_ROOT . '/tests/config/1-' . APP_CONTEXT . '.php',
+	require APP_ROOT . '/tests/config/2-local.php'
 );
 
-$application = new yii\console\Application($config);
-$exitCode = $application->run();
-exit($exitCode);
+exit((new Application($config))->run());

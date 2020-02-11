@@ -24,16 +24,13 @@ before_install:
 
 install:
   - travis_retry composer self-update && composer --version
-  - travis_retry composer update --dev --prefer-dist --no-interaction
+  - travis_retry composer update --prefer-dist --no-interaction
   # install php extensions
   - |
     pear config-set preferred_state beta
     printf "\n" | pecl install imagick
     # gmagick is not installed on travis currently
     #printf "\n" | pecl install gmagick
-# setup application:
-  - |
-    sed -i "s/'cookieValidationKey' => ''/'cookieValidationKey' => 'testkey'/" config/web.php
 
 script:
   - |

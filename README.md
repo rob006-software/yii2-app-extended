@@ -101,30 +101,33 @@ CONFIGURATION
 
 ### Environment-specific config files
 
-By default template handles configuration specific for specified environment. For example `config/web-prod.php`
-contains configuration overrides for web app in production environment. This allows you to avoid
+Template supports configuration specific for specified environment. For example `config/1-web.php` contains configuration 
+overrides for web app and `config/2-prod.php` configuration for production environment. This allows you to avoid
 configuration duplication by creating more general configuration an override it for specified environment.
-For example, for web application in `prod` environment app reads configuration in the following order:
+For example, for web application in `prod` environment app reads and merge configuration in the following order
+(see [ArrayHelper::merge()](https://www.yiiframework.com/doc-2.0/guide-helper-array.html#merging-arrays)
+for more details):
 
-1. `config/main.php`.
-2. `config/main-prod.php`.
-3. `config/main-local.php`.
-4. `config/web.php`.
-5. `config/web-prod.php`.
-6. `config/web-local.php`.
+1. `config/0-main.php`.
+2. `config/1-web.php`.
+3. `config/2-prod.php`.
+4. `config/3-local.php`.
 
 
-By default 3 types of environments are handled:
+By default 2 types of environments are handled:
 
 1. `dev` - used by developer on app development. By default it contains some tools useful during
    development, like Debug toolbar or Gii.
-2. `stage` - environment for final test before deployment to production.
-3. `prod` - production environment.
+2. `prod` - production environment.
+
+But you can easily add new environment by creating specified file in `config` directory.
 
 More about environments you can find on [Wiki](https://en.wikipedia.org/wiki/Deployment_environment).
 
-You can switch environment by editing `yii` and `public/index.php` files and changing
-`defined('YII_ENV') or define('YII_ENV', 'dev');` line with proper environment.
+Environment settings are stored in `config/env-local.php` (file is created during `composer install` from 
+`config/env-local.php` template). You can switch environment by editing this file (it is ignored by VCS, so 
+environment settings are specific for local installation). **Default environment is `dev` - make sure that you switch 
+this to `prod` on production deployment**. 
 
 
 ### Local config files
@@ -134,10 +137,7 @@ and should not be stored in [version control system](https://en.wikipedia.org/wi
 example personal keys or configuration specific for a particular server. In `config` directory you can find
 a set of config files prefixed by `-local.php` - these files are designed for storing such a configuration.
 These local configs are added to `.gitignore` and never will be pushed to source code repository, so you can safely
-use it for override some general config. For example `config/web-local.php` will override some settings
-from `config/web.php` (see [ArrayHelper::merge()](https://www.yiiframework.com/doc-2.0/guide-helper-array.html#merging-arrays)
-for more details). Then `config/web.php` contains general configuration of web application shared with
-all installations and `config/web-local.php` contains configuration specific only for local installation.
+use it to override some general config. You can use `config/3-local.php` to override some general config.
 
 In `config/templates` directory you can find templates for local config files. On first run `composer install`
 these files will be copied to `config` directory. You can edit these templates to adjust default content of
@@ -151,7 +151,7 @@ Edit the file `config/db-local.php` with real data, for example:
 
 ```php
 return [
-    'class' => 'yii\db\Connection',
+    'class' => yii\db\Connection::class,
     'dsn' => 'mysql:host=localhost;dbname=yii2app',
     'username' => 'root',
     'password' => '1234',
@@ -184,22 +184,19 @@ tests are for testing user interaction. Acceptance tests are disabled by default
 they perform testing in real browser.
 
 
-### Running  acceptance tests
+### Running acceptance tests
 
 To execute acceptance tests do the following:
 
 1. Rename `tests/acceptance.suite.yml.example` to `tests/acceptance.suite.yml` to enable suite configuration
 
-2. Replace `codeception/base` package in `composer.json` with `codeception/codeception` to install full featured
-   version of Codeception
-
-3. Update dependencies with Composer
+2. Update dependencies with Composer
 
     ```shell
     composer update
     ```
 
-4. Download [Selenium Server](https://selenium.dev/downloads/) and launch it:
+3. Download [Selenium Server](https://selenium.dev/downloads/) and launch it:
 
     ```shell
     java -jar ~/selenium-server-standalone-x.xx.x.jar
@@ -221,22 +218,22 @@ To execute acceptance tests do the following:
     docker run --net=host selenium/standalone-firefox:2.53.0
     ```
 
-5. (Optional) Create `yii2_basic_tests` database and update it by applying migrations if you have them.
+4. (Optional) Create `yii2_basic_tests` database and update it by applying migrations if you have them.
 
    ```
    tests/bin/yii migrate
    ```
 
-   The database configuration can be found at `config/testdb-local.php`.
+   The database configuration can be found at `tests/config/db-local.php`.
 
 
-6. Start web server:
+5. Start web server:
 
     ```shell
     tests/bin/yii serve
     ```
 
-7. Now you can run all available tests
+6. Now you can run all available tests
 
    ```shell
    # run all available tests

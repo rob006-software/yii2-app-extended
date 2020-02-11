@@ -78,12 +78,12 @@
 		"yii\\composer\\Installer::postInstall": {
 			"copyFiles": [
 				{
-					"config/templates/main-local.php": "config/main-local.php",
-					"config/templates/console-local.php": "config/console-local.php",
-					"config/templates/web-local.php": "config/web-local.php",
+					"config/templates/3-local.php": "config/3-local.php",
+					"config/templates/env-local.php": "config/env-local.php",
+					"config/templates/bootstrap-local.php": "config/bootstrap-local.php",
 					"config/templates/db-local.php": "config/db-local.php",
-					"config/templates/testdb-local.php": "config/testdb-local.php",
-					"config/templates/test-local.php": "config/test-local.php"
+					"tests/config/templates/db-local.php": "tests/config/db-local.php",
+					"tests/config/templates/2-local.php": "tests/config/2-local.php"
 				}
 			],
 			"generateCookieValidationKey": [

@@ -2,6 +2,8 @@
 
 /* {licenseheader} */
 
+use app\models\User;
+
 /**
  * Configuration adjustments for web application.
  */
@@ -9,7 +11,7 @@ return [
 	'id' => 'app-web',
 	'components' => [
 		'user' => [
-			'identityClass' => 'app\models\User',
+			'identityClass' => User::class,
 			'enableAutoLogin' => true,
 		],
 		'errorHandler' => [

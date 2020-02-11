@@ -2,21 +2,24 @@
 
 /* {licenseheader} */
 
-defined('YII_DEBUG') or define('YII_DEBUG', true);
-defined('YII_ENV') or define('YII_ENV', 'dev');
+use yii\helpers\ArrayHelper;
+use yii\web\Application;
 
-require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
-// use composer classmap to increase autoloading performance
-Yii::$classMap = require __DIR__ . '/../vendor/composer/autoload_classmap.php';
+const APP_CONTEXT = 'web';
+define('APP_ROOT', dirname(__DIR__));
 
-$config = yii\helpers\ArrayHelper::merge(
-	require __DIR__ . '/../config/main.php',
-	require __DIR__ . '/../config/main-' . YII_ENV . '.php',
-	require __DIR__ . '/../config/main-local.php',
-	require __DIR__ . '/../config/web.php',
-	require __DIR__ . '/../config/web-' . YII_ENV . '.php',
-	require __DIR__ . '/../config/web-local.php'
+require APP_ROOT . '/config/env-local.php';
+
+require APP_ROOT . '/vendor/yiisoft/yii2/Yii.php';
+require APP_ROOT . '/vendor/autoload.php';
+
+require APP_ROOT . '/config/bootstrap.php';
+/* @noinspection PhpIncludeInspection */
+$config = ArrayHelper::merge(
+	require APP_ROOT . '/config/0-main.php',
+	require APP_ROOT . '/config/1-' . APP_CONTEXT . '.php',
+	require APP_ROOT . '/config/2-' . ENV . '.php',
+	require APP_ROOT . '/config/3-local.php'
 );
 
-(new yii\web\Application($config))->run();
+(new Application($config))->run();
