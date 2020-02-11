@@ -218,7 +218,7 @@ To execute acceptance tests do the following:
     docker run --net=host selenium/standalone-firefox:2.53.0
     ```
 
-4. (Optional) Create `yii2_basic_tests` database and update it by applying migrations if you have them.
+4. (Optional) Create `yii2_app_tests` database and update it by applying migrations if you have them.
 
    ```
    tests/bin/yii migrate

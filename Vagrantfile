@@ -7,7 +7,7 @@ required_plugins.each do |plugin|
 end
 
 domains = {
-  app: 'yii2basic.test'
+  app: 'yii2app.test'
 }
 
 vagrantfile_dir_path = File.dirname(__FILE__)
@@ -24,7 +24,7 @@ options = YAML.load_file config[:local]
 
 # check github token
 if options['github_token'].nil? || options['github_token'].to_s.length != 40
-  puts "You must place REAL GitHub token into configuration:\n/yii2-app-basic/vagrant/config/vagrant-local.yml"
+  puts "You must place REAL GitHub token into configuration:\n/yii2-app-extended/vagrant/config/vagrant-local.yml"
   exit
 end
 
