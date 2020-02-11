@@ -32,6 +32,7 @@ return [
 		],
 		'urlManager' => [
 			'showScriptName' => true,
+			'enablePrettyUrl' => true,
 		],
 	],
 	'params' => [

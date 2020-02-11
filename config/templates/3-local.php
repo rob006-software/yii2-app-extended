@@ -30,4 +30,4 @@ return (static function () {
 	}
 
 	return $config;
-});
+})();

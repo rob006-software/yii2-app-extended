@@ -90,7 +90,7 @@
 				}
 			],
 			"generateCookieValidationKey": [
-				"config/web-local.php"
+				"config/3-local.php"
 			]
 		}
 	}

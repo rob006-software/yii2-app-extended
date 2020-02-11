@@ -20,11 +20,11 @@ DIRECTORY STRUCTURE
       app/views/          contains view files for the Web application
       app/widgets/        contains widgets classes
       config/             contains application configurations
+      public/             contains the entry script and Web resources
       resources/          contains non-PHP resources
       runtime/            contains files generated during runtime
       tests/              contains various tests for the application
       vendor/             contains dependent 3rd-party packages
-      public/             contains the entry script and Web resources
 
 
 

@@ -13,10 +13,12 @@ use yii\caching\FileCache;
  */
 return [
 	'basePath' => APP_ROOT . '/app',
+	'runtimePath' => APP_ROOT . '/runtime',
 	'bootstrap' => [
 		'log',
 	],
 	'aliases' => [
+		'@vendor' => APP_ROOT . '/vendor',
 		'@bower' => '@vendor/bower-asset',
 		'@npm' => '@vendor/npm-asset',
 	],
