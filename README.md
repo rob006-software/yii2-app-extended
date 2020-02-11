@@ -12,18 +12,18 @@ custom file headers or `@author` phpdoc.
 DIRECTORY STRUCTURE
 -------------------
 
-      assets/             contains assets definition
-      commands/           contains console commands (controllers)
+      app/assets/         contains assets definition
+      app/commands/       contains console commands (controllers)
+      app/controllers/    contains Web controller classes
+      app/mail/           contains view files for e-mails
+      app/models/         contains model classes
+      app/views/          contains view files for the Web application
+      app/widgets/        contains widgets classes
       config/             contains application configurations
-      controllers/        contains Web controller classes
-      mail/               contains view files for e-mails
-      models/             contains model classes
       resources/          contains non-PHP resources
       runtime/            contains files generated during runtime
       tests/              contains various tests for the application
       vendor/             contains dependent 3rd-party packages
-      views/              contains view files for the Web application
-      widgets/            contains widgets classes
       public/             contains the entry script and Web resources
 
 
@@ -46,14 +46,14 @@ at [getcomposer.org](https://getcomposer.org/doc/00-intro.md#installation-nix).
 You can then install this project template using the following command:
 
 ```shell
-composer create-project --prefer-dist rob006/yii2-app-extended app
+composer create-project --prefer-dist rob006/yii2-app-extended application
 ```
 
-Now you should be able to access the application through the following URL, assuming `app` is the directory
+Now you should be able to access the application through the following URL, assuming `application` is the directory
 directly under the Web root.
 
 ~~~
-http://localhost/app/public/
+http://localhost/application/public/
 ~~~
 
 

@@ -12,7 +12,7 @@ use yii\caching\FileCache;
  * General configuration shared between console and web application.
  */
 return [
-	'basePath' => APP_ROOT,
+	'basePath' => APP_ROOT . '/app',
 	'bootstrap' => [
 		'log',
 	],
@@ -30,6 +30,7 @@ return [
 			// 'useFileTransport' to false and configure a transport
 			// for the mailer to send real emails.
 			'useFileTransport' => true,
+			'viewPath' => APP_ROOT . '/app/mail/views',
 		],
 		'log' => [
 			'targets' => [

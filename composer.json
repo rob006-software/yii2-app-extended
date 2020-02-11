@@ -32,12 +32,15 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"app\\": ""
+			"app\\": "app/"
 		},
 		"exclude-from-classmap": [
-			"/tests/",
-			"/resources/"
 		]
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"tests\\": "tests/"
+		}
 	},
 	"repositories": [
 		{

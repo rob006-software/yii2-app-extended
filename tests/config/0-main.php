@@ -9,10 +9,11 @@ use yii\caching\ArrayCache;
  */
 return [
 	'id' => 'app-tests',
-	'basePath' => APP_ROOT,
+	'basePath' => APP_ROOT . '/app',
 	'runtimePath' => APP_ROOT . '/tests/runtime',
 	'language' => 'en-US',
 	'aliases' => [
+		'@vendor' => APP_ROOT . '/vendor',
 		'@bower' => '@vendor/bower-asset',
 		'@npm' => '@vendor/npm-asset',
 		'@tests' => APP_ROOT . '/tests',
@@ -21,6 +22,7 @@ return [
 		'db' => require __DIR__ . '/db-local.php',
 		'mailer' => [
 			'useFileTransport' => true,
+			'viewPath' => APP_ROOT . '/app/mail/views',
 		],
 		'cache' => [
 			'class' => ArrayCache::class,
