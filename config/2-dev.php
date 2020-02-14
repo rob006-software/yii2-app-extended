@@ -39,5 +39,8 @@ return (static function () {
 		]);
 	}
 
+	if (IS_CONSOLE) {
+	}
+
 	return $config;
 })();

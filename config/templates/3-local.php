@@ -9,6 +9,7 @@ use yii\helpers\ArrayHelper;
  */
 return (static function () {
 	$config = [];
+
 	if (IS_WEB) {
 		$config = ArrayHelper::merge($config, [
 			// uncomment the following to add your IP if you are not connecting from localhost
@@ -27,6 +28,9 @@ return (static function () {
 				],
 			],
 		]);
+	}
+
+	if (IS_CONSOLE) {
 	}
 
 	return $config;
