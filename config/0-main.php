@@ -45,7 +45,6 @@ return [
 		'db' => ArrayHelper::merge(
 			[
 				'class' => DbConnection::class,
-				'charset' => 'utf8',
 				'enableSchemaCache' => true,
 			],
 			require __DIR__ . '/db-local.php'

@@ -93,7 +93,7 @@ After installation you should perform some steps to customize the project to you
 
 3. Adjust `composer.json` file with your project settings.
 
-4. Add `LICENSE.md` file with your project license to the root of the project.
+4. Add `LICENSE` file with your project license to the root of the project.
 
 
 CONFIGURATION
@@ -155,7 +155,7 @@ return [
     'dsn' => 'mysql:host=localhost;dbname=yii2app',
     'username' => 'root',
     'password' => '1234',
-    'charset' => 'utf8',
+    'charset' => 'utf8mb4',
 ];
 ```
 

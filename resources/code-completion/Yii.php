@@ -9,7 +9,7 @@
  *
  * @author {author}
  */
-class Yii extends \yii\BaseYii {
+class Yii extends yii\BaseYii {
 
 	/**
 	 * @var BaseApplication|WebApplication|ConsoleApplication the application instance
@@ -17,18 +17,16 @@ class Yii extends \yii\BaseYii {
 	public static $app;
 }
 
-abstract class BaseApplication extends \yii\base\Application {
+abstract class BaseApplication extends yii\base\Application {
 
 }
 
-class WebApplication extends \yii\web\Application {
+class WebApplication extends yii\web\Application {
 
-//	/**
-//	 * @var \app\components\MyComponent
-//	 */
+//	/** @var app\components\MyComponent */
 //	public $myComponent;
 }
 
-class ConsoleApplication extends \yii\console\Application {
+class ConsoleApplication extends yii\console\Application {
 
 }
